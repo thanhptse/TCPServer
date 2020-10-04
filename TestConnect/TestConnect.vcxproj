@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{9023A997-18D4-4F09-BB68-D2BB6F40C0AB}</ProjectGuid>
-    <RootNamespace>TCPServer</RootNamespace>
+    <ProjectGuid>{EF8C2E59-D739-4D5F-AE4B-5A43B4BFA4D7}</ProjectGuid>
+    <RootNamespace>TestConnect</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
