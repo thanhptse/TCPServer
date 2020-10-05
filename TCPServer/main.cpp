@@ -4,6 +4,15 @@
 
 #pragma comment (lib, "ws2_32.lib")
 
+// 1: Socket()
+// 2: Bind()
+// 3: Listen()
+// 4: Accept()
+// 5: Connect()
+// 6: Read() / Send() / Sendto()
+// 7: Write() / Recv() / Recvfrom()
+// 8: Close()
+// Socket programming usually have 8 step like that
 void main() {
 	WSAData wsData;
 	WORD ver = MAKEWORD(2, 2);
@@ -22,7 +31,7 @@ void main() {
 
 	sockaddr_in hint;
 	hint.sin_family = AF_INET;
-	hint.sin_port = htons(54000);
+	hint.sin_port = htons(54000); // Host Byte Order to Network Byte Order (short)
 	hint.sin_addr.S_un.S_addr = INADDR_ANY;
 
 	bind(listening, (sockaddr*)&hint, sizeof(hint));
@@ -44,8 +53,8 @@ void main() {
 		std::cout << host << "  connected on port " << service << std::endl;
 	}
 	else {
-		inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST);
-		std::cout << host << "connected on port " << ntohs(client.sin_port) << std::endl;
+		inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST); //inet_ntop extends the inet_ntoa(change ip address format from Binary to Ascii dotted)
+		std::cout << host << "connected on port " << ntohs(client.sin_port) << std::endl; // ntohs stand for Network Byte Order to Host Byte Order (short)
 	}
 
 	closesocket(listening);
