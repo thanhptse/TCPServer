@@ -3,7 +3,6 @@
 TCPListener::TCPListener(std::string ipAddress, int port, MessageReceivedHandler handler)
 	: m_ipAddress(ipAddress), m_port(port), MessageReceived(handler)
 {
-
 }
 
 TCPListener::~TCPListener() {
